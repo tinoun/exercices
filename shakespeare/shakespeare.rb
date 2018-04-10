@@ -1,17 +1,16 @@
-def get_file_as_string(filename)
-  data = ''
-  f = File.open(filename, "r") 
-  f.each_line do |line|
-    data += line
-  end
-  return data
+def jean_michel_data(string, dictionary)
+	frequencies = Hash.new
+	dictionary.each do |substring| 
+		frequencies[substring] = string.scan(/(?=#{substring})/).count
+		frequencies.delete(substring) if frequencies[substring] == 0
+	end
+	frequencies
 end
 
-data = get_file_as_string('shakespeare.txt')
-data = data.split.tr('.,":'*, '')
+def shakespeare(dictionary)
+	file = File.open("shakespeare.txt", "r")
+	jean_michel_data(file.read, dictionary)
+end
 
-puts data.inspect 
-dictionnary = ["the", "of", "and", "to", "a", "in", "for",
- "is", "on", "that", "by", "this", "with", "i", "you", "it", 
- "not", "or", "be", "are"]
-
+dictionary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
+puts shakespeare(dictionary)
