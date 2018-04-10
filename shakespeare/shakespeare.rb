@@ -1,8 +1,8 @@
 def jean_michel_data(string, dictionary)
-	frequencies = Hash.new
-	dictionary.each do |substring| 
-		frequencies[substring] = string.scan(/(?=#{substring})/).count
-		frequencies.delete(substring) if frequencies[substring] == 0
+	frequencies = Hash.new(0)
+	dictionary.each do |letter| 
+		frequencies[letter] = string.scan(/(?=#{letter})/).count
+		frequencies.delete(letter) if frequencies[letter] == 0
 	end
 	frequencies
 end
@@ -15,6 +15,7 @@ end
 dictionary = ["the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
 puts shakespeare(dictionary)
 #AFFICHE LES MOTS DU DICO SELECTIONNES 
+
 
 ######### GROS MOTS ##########
 
@@ -33,4 +34,4 @@ grosmots = get_file_as_string 'grosmots.txt'
 grosmots = grosmots.split(" ")
 
 puts shakespeare(grosmots)
-#AFFICHE LES MOTS DU DICO SELECTIONNES + GROS MOTSS
+# AFFICHE LES MOTS DU DICO SELECTIONNES + GROS MOTS

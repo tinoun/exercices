@@ -2,10 +2,10 @@ dictionary = ["below", "down", "go", "going", "horn", "how",
 	"howdy", "it", "i", "low", "own", "part", "partner", "sit"]
 
 def jean_michel_data(string, dictionary)
-	frequencies = Hash.new
-	dictionary.each do |substring| 
-		frequencies[substring] = string.scan(/(?=#{substring})/).count
-		frequencies.delete(substring) if frequencies[substring] == 0
+	frequencies = Hash.new(0)
+	dictionary.each do |letter| 
+		frequencies[letter] = string.scan(/(?=#{letter})/).count
+		frequencies.delete(letter) if frequencies[letter] == 0
 	end
 	frequencies
 end
