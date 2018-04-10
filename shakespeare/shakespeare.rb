@@ -33,4 +33,4 @@ grosmots = get_file_as_string 'grosmots.txt'
 grosmots = grosmots.split(" ")
 
 puts shakespeare(grosmots)
-#AFFICHE LES MOTS DU DICO SELECTIONNES + GROS MOTS 
+#AFFICHE LES MOTS DU DICO SELECTIONNES + GROS MOTSS
