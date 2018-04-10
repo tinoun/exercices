@@ -11,8 +11,6 @@ Exercice 2 (Chiffrer des données) : cesar.rb
 
 Exercice 3 (Stock picker) : traderdimanche.rb
 
-Exercice 3bis : traderlundi.rb
-
 Exercice 4 (Compter les mots) : mots.rb
 
 Exercice 4bis (Compter les mots (bis)) : shakespeare.rb
